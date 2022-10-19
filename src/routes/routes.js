@@ -5,6 +5,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Words from "../components/Words/Words";
 import Topics from "../components/Topics/Topics";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/words",
-        element: <Words></Words>,
+        element: (
+          <PrivateRoutes>
+            <Words></Words>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/topics",
